@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+    <name>FrescoChat</name>
+    <author>Sebastian Odena</author>
+    <creationDate>January 2013</creationDate>
+    <copyright>Copyright (C) 2013 frescochat.com. All rights reserved.</copyright>
+    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <authorEmail>support@frescochat.com</authorEmail>
+    <authorUrl>http://www.frescochat.com</authorUrl>
+    <version>1.0</version>
+    <description>Frescochat enables you to chat to your web visitors using any popular IM app for desktop or mobile devices. Free lifetime plan with unlimited chats.</description>
+    <files>
+        <filename module="mod_flexytalk">mod_flexytalk.php</filename>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>
+        <folder>fields</folder>
+    </files>
+    <config addfieldpath="/modules/mod_flexytalk/fields" >
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    type="spacer"
+                    name="&lt;a href=&quot;http://www.frescochat.com&quot; target=&quot;_blank&quot;&gt;SIGN UP FOR A FREE ACCOUNT &lt;/a&gt;&lt;div style=&quot;color:#FF0000; width:465px; font-size:12px;  padding:3px; margin:0; text-align:justify; background:#CCCCCC;&quot;&gt;Note : &lt;span style=&quot;color:#000; font-size:11px;&quot;&gt;You can signup for a FREE 14-days trial on our Plus or Corp Plan. No credit cards required for signing up. After the trial you can renew your plan with a monthly or annual payment (discount). You can also signup for our Free plan, which doesn’t require any payment at all
+                    &lt;/span&gt;&lt;/div&gt;" />
+                    <field
+                    name="widget_id"
+                    type="text"
+                    size="90"
+                    default=""
+                    label="FrescoID: "
+                    description="Enter your FrescoID" />
+					 <field
+                    type="spacer"
+                    name="&lt;div style=&quot;float:left;width:450px;&quot; &gt; &lt;a target=&quot;_blank&quot; href=&quot;http://panel.frescochat.com&quot;&gt; &lt;span &gt;Login to Frescochat Control Panel to get your FrescoID and set up your account&lt;/span&gt;&lt;/a&gt;&lt;/div &gt;" />
+
+              
+               
+                </fieldset>
+        </fields>
+    </config>
+</extension>
+
+

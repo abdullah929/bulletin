@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6.0" type="module" method="upgrade" client="site">
+	<name>ARI Cloud Carousel</name>
+	<author>ARI Soft</author>
+	<creationDate>June 2014</creationDate>
+	<copyright>ARI Soft</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>info@ari-soft.com</authorEmail>
+	<authorUrl>www.ari-soft.com</authorUrl>
+	<version>1.7.9</version>
+	<description>ARI_CLOUD_CAROUSEL_MODULE</description>
+	<scriptfile>script.php</scriptfile>
+	<files folder="install">
+		<filename module="mod_aricloudcarousel">mod_aricloudcarousel.php</filename>
+		<filename module="mod_aricloudcarousel">mod_aricloudcarousel.xml</filename>
+		<filename>index.html</filename>
+		<filename>aricloudcarousel.ini</filename>
+		<folder>mod_aricloudcarousel/</folder>
+		<folder>tmpl/</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">install/language/en-GB/en-GB.mod_aricloudcarousel.ini</language>
+		<language tag="en-GB">install/language/en-GB/en-GB.mod_aricloudcarousel.sys.ini</language>
+		<language tag="pt-BR">install/language/pt-BR/pt-BR.mod_aricloudcarousel.ini</language>
+		<language tag="pt-BR">install/language/pt-BR/pt-BR.mod_aricloudcarousel.sys.ini</language>
+	</languages>
+</extension>

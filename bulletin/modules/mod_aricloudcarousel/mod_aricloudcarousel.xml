@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6.0" type="module" method="upgrade" client="site">
+	<name>ARI Cloud Carousel</name>
+	<author>ARI Soft</author>
+	<creationDate>June 2014</creationDate>
+	<copyright>ARI Soft</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>info@ari-soft.com</authorEmail>
+	<authorUrl>www.ari-soft.com</authorUrl>
+	<version>1.7.9</version>
+	<description>ARI_CLOUD_CAROUSEL_MODULE</description>
+	<files>
+		<filename module="mod_aricloudcarousel">mod_aricloudcarousel.php</filename>
+		<filename>index.html</filename>
+		<filename>aricloudcarousel.ini</filename>
+		<folder>mod_aricloudcarousel/</folder>
+		<folder>tmpl/</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_aricloudcarousel.ini</language>
+		<language tag="pt-BR">language/pt-BR/pt-BR.mod_aricloudcarousel.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/modules/mod_aricloudcarousel/mod_aricloudcarousel/fields">
+				<field name="includeJQuery" type="list" default="1" label="ACC_INCJQUERY_LABEL" description="ACC_INCJQUERY_DESCR">
+		  			<option value="0">ACC_NO</option> 
+		  			<option value="1">ACC_YES</option> 
+		  		</field>
+		  		<field name="loadJQueryMethod" type="list" default="google_cdn" label="ACC_LOADJQUERYMETHOD_LABEL" description="ACC_LOADJQUERYMETHOD_DESCR">
+		  			<option value="google_cdn">ACC_GOOGLECDN</option> 
+		  			<option value="local">ACC_LOCALCOPY</option> 
+		  		</field>
+		  		<field name="jQueryVer" type="list" default="1.4.4" label="ACC_JQUERYVER_LABEL" description="ACC_JQUERYVER_DESCR">
+		  			<option value="1.3.0">1.3.0</option> 
+		  			<option value="1.3.1">1.3.1</option>
+		  			<option value="1.3.2">1.3.2</option>
+		  			<option value="1.4.0">1.4.0</option>
+		  			<option value="1.4.1">1.4.1</option>
+		  			<option value="1.4.2">1.4.2</option>
+		  			<option value="1.4.3">1.4.3</option>
+		  			<option value="1.4.4">1.4.4</option>
+		  		</field>
+				<field name="noConflict" type="list" default="1" label="ACC_NOCONFLICT_LABEL" description="ACC_NOCONFLICT_DESCR">
+		  			<option value="0">ACC_NO</option> 
+		  			<option value="1">ACC_YES</option> 
+		  		</field>
+				<field name="fixedId" type="list" default="0" label="ACC_FIXEDID_LABEL" description="ACC_FIXEDID_DESCR">
+		  			<option value="0">ACC_NO</option> 
+		  			<option value="1">ACC_YES</option> 
+		  		</field>
+				<field name="moduleclass_sfx" type="text" default="" label="ACC_CLASSSUFFIX_LABEL" description="PARAMMODULECLASSSUFFIX" />
+				<field name="beforeText" type="textarea" default="" rows="5" cols="50" label="ACC_BEFORETEXT_LABEL" description="ACC_BEFORETEXT_DESCR" />
+				<field name="afterText" type="textarea" default="" rows="5" cols="50" label="ACC_AFTERTEXT_LABEL" description="ACC_AFTERTEXT_DESCR" />
+		  		<field name="lpHeader" type="header" default="ACC_LIGHTBOX_PARAMS" label="" description="" />
+		  		<field name="lightboxEngine" type="list" default="" label="ACC_LIGHTBOXENGINE_LABEL" description="ACC_LIGHTBOXENGINE_DESCR">
+		  			<option value="">ACC_NONE</option>
+		  			<option value="arisexylightbox">ACC_ARISEXYLIGHTBOX</option>
+		  			<option value="aricolorbox">ACC_ARICOLORBOX</option>
+		  			<option value="arifancybox">ACC_ARIFANCYBOX</option>
+		  			<option value="ariprettyphoto">ACC_ARIPRETTYPHOTO</option>
+		  			<option value="ninjashadowbox">ACC_NINJASHADOWBOX</option>
+		  			<option value="rokbox">ACC_ROKBOX</option>
+		  			<option value="corejoomlalightbox">ACC_COREJOOMLALIGHTBOX</option>
+		  		</field>
+		  		<field name="lightbox_width" type="text" size="5" default="450" label="ACC_LBWIDTH_LABEL" description="ACC_LBWIDTH_DESCR" />
+		  		<field name="lightbox_height" type="text" size="5" default="300" label="ACC_LBHEIGHT_LABEL" description="ACC_LBHEIGHT_DESCR" />
+		  		<field name="lightbox_bgColor" type="color" size="10" default="" label="ACC_BGCOLOR_LABEL" description="ACC_BGCOLOR_DESCR" />
+		  		<field name="spHeader" type="header" default="ACC_STYLES_PARAMS" label="" description="" />
+		  		<field name="width" type="text" size="5" default="300" label="ACC_WIDTH_LABEL" description="ACC_WIDTH_DESCR" />
+		  		<field name="height" type="text" size="5" default="220" label="ACC_HEIGHT_LABEL" description="ACC_HEIGHT_DESCR" />
+		  		<field name="linkTarget" type="list" default="_self" label="ACC_LINKTARGET_LABEL" description="ACC_LINKTARGET_DESCR">
+		  			<option value="_blank">ACC_TARGET_BLANK</option>
+					<option value="_self">ACC_TARGET_SELF</option>
+					<option value="_parent">ACC_TARGET_PARENT</option>
+					<option value="_top">ACC_TARGET_TOP</option>
+		  		</field>
+		  		<field name="customLinkTarget" type="text" size="20" default="" label="ACC_CUSTOMLINKTARGET_LABEL" description="ACC_CUSTOMLINKTARGET_DESCR" />
+		  		<field name="theme" type="folderlist" default="default" directory="modules/mod_aricloudcarousel/mod_aricloudcarousel/js/themes" hide_none="1" label="ACC_THEME_LABEL" description="ACC_THEME_DESCR" />
+				<field name="customstyle" type="textarea" rows="10" cols="50" label="ACC_STYLE_LABEL" description="ACC_STYLE_DESCR" />
+				<field name="cpHeader" type="header" default="ACC_CAROUSEL_PARAMS" label="" description="" />
+				<field name="opt_minScale" type="text" size="5" default="0.5" label="ACC_MINSCALE_LABEL" description="ACC_MINSCALE_DESCR" />
+				<field name="opt_reflHeight" type="text" size="5" default="30" label="ACC_REFLHEIGHT_LABEL" description="ACC_REFLHEIGHT_DESCR" />
+				<field name="opt_reflGap" type="text" size="5" default="5" label="ACC_REFLGAP_LABEL" description="ACC_REFLGAP_DESCR" />
+				<field name="opt_reflOpacity" type="text" size="5" default="0.5" label="ACC_REFLOPACITY_LABEL" description="ACC_REFLOPACITY_DESCR" />
+				<field name="opt_xRadius" type="text" size="5" default="0" label="ACC_XRADIUS_LABEL" description="ACC_XRADIUS_DESCR" />
+				<field name="opt_yRadius" type="text" size="5" default="0" label="ACC_YRADIUS_LABEL" description="ACC_YRADIUS_DESCR" />
+				<field name="opt_xPos" type="text" size="5" default="0" label="ACC_XPOS_LABEL" description="ACC_XPOS_DESCR" />
+				<field name="opt_yPos" type="text" size="5" default="0" label="ACC_YPOS_LABEL" description="ACC_YPOS_DESCR" />
+		  		<field name="opt_FPS" type="text" size="5" default="30" label="ACC_FPS_LABEL" description="ACC_FPS_DESCR" />
+		  		<field name="opt_speed" type="text" size="5" default="0.2" label="ACC_SPEED_LABEL" description="ACC_SPEED_DESCR" />
+		  		<field name="opt_autoRotate" type="list" default="no" label="ACC_AUTOROTATE_LABEL" description="ACC_AUTOROTATE_DESCR">
+		  			<option value="no">ACC_NO</option> 
+		  			<option value="left">ACC_LEFT</option> 
+		  			<option value="right">ACC_RIGHT</option>
+		  		</field>
+		  		<field name="opt_autoRotateDelay" type="text" size="5" default="1500" label="ACC_AUTOROTATEDELAY_LABEL" description="ACC_AUTOROTATEDELAY_DESCR" />
+		  		<field name="opt_mouseWheel" type="list" default="0" label="ACC_MOUSEWHEEL_LABEL" description="ACC_MOUSEWHEEL_DESCR">
+		  			<option value="0">ACC_NO</option> 
+		  			<option value="1">ACC_YES</option> 
+		  		</field>
+		  		<field name="opt_reverseMouseWheel" type="list" default="0" label="ACC_REVMOUSEWHEEL_LABEL" description="ACC_REVMOUSEWHEEL_DESCR">
+		  			<option value="0">ACC_NO</option> 
+		  			<option value="1">ACC_YES</option> 
+		  		</field>
+		  		<field name="opt_keyboardNav" type="list" default="0" label="ACC_KEYBOARDNAV_LABEL" description="ACC_KEYBOARDNAV_DESCR">
+		  			<option value="0">ACC_NO</option> 
+		  			<option value="1">ACC_YES</option> 
+		  		</field>
+				<field name="opt_reverseKeyboardNav" type="list" default="0" label="ACC_REVKEYBOARDNAV_LABEL" description="ACC_REVKEYBOARDNAV_DESCR">
+		  			<option value="0">ACC_NO</option> 
+		  			<option value="1">ACC_YES</option> 
+		  		</field>
+		  		<field name="opt_bringToFront" type="list" default="0" label="ACC_BRINGTOFRONT_LABEL" description="ACC_BRINGTOFRONT_DESCR">
+		  			<option value="0">ACC_NO</option> 
+		  			<option value="1">ACC_YES</option> 
+		  		</field>
+		  		<field name="opt_disableTimer" type="list" default="1" label="ACC_DISABLETIMER_LABEL" description="ACC_DISABLETIMER_DESCR">
+		  			<option value="0">ACC_NO</option> 
+		  			<option value="1">ACC_YES</option> 
+		  		</field>
+				<field name="opt_stopInBackground" type="list" default="0" label="ACC_STOPINBG_LABEL" description="ACC_STOPINBG_DESCR">
+		  			<option value="0">ACC_NO</option> 
+		  			<option value="1">ACC_YES</option> 
+		  		</field>
+				<field name="opt_startIndex" type="text" size="5" default="0" label="ACC_STARTIDX_LABEL" description="ACC_STARTIDX_DESCR" />
+		  		<field name="openOnlyActive" type="list" default="0" label="ACC_OPENONLYACTIVE_LABEL" description="ACC_OPENONLYACTIVE_DESCR">
+  					<option value="0">ACC_NO</option> 
+		  			<option value="1">ACC_YES</option> 
+		  		</field>
+		  		<field name="bgImage" type="text" size="85" default="" label="ACC_BGIMAGE_LABEL" description="ACC_BGIMAGE_DESCR" />
+		  		<field name="@spacer" type="spacer" default="" label="" description="" />
+				<field name="lbl_left" type="text" size="45" default="Left" label="ACC_LEFTBTN_LABEL" description="ACC_LEFTBTN_DESCR" />
+				<field name="lbl_right" type="text" size="45" default="Right" label="ACC_RIGHTBTN_LABEL" description="ACC_RIGHTBTN_DESCR" />
+				<field name="showNav" type="list" default="1" label="ACC_SHOWNAV_LABEL" description="ACC_SHOWNAV_DESCR">
+		  			<option value="0">ACC_NO</option> 
+		  			<option value="1">ACC_YES</option> 
+		  		</field>
+		  		<field name="showTitle" type="list" default="1" label="ACC_SHOWTITLE_LABEL" description="ACC_SHOWTITLE_DESCR">
+		  			<option value="0">ACC_NO</option> 
+		  			<option value="1">ACC_YES</option> 
+		  		</field>
+		  		<field name="showAlt" type="list" default="1" label="ACC_SHOWALT_LABEL" description="ACC_SHOWALT_DESCR">
+		  			<option value="0">ACC_NO</option> 
+		  			<option value="1">ACC_YES</option> 
+		  		</field>
+				<field name="opt_onlyFrontDescription" type="list" default="0" label="ACC_ONLYFRONTDESCRIPTION_LABEL" description="ACC_ONLYFRONTDESCRIPTION_DESCR">
+		  			<option value="0">ACC_NO</option> 
+		  			<option value="1">ACC_YES</option> 
+		  		</field>
+				<field name="spsHeader" type="header" default="ACC_SLIDES_PARAMS" label="" description="" />
+				<field name="i18n" type="list" default="0" label="ACC_I18N_LABEL" description="ACC_I18N_DESCR">
+					<option value="0">ACC_NO</option> 
+		  			<option value="1">ACC_YES</option> 
+		  		</field>
+				<field name="descrFile" type="text" size="30" default="aricloudcarousel.ini" label="ACC_DESCRFILE_LABEL" description="ACC_DESCRFILE_DESCR" />
+				<field name="imgNumber" type="text" default="0" label="ACC_IMGNUM_LABEL" description="ACC_IMGNUM_DESCR" />
+				<field name="sortBy" type="list" default="" label="ACC_SORTBY_LABEL" description="ACC_SORTBY_DESCR">
+					<option value="">ACC_NONE</option> 
+					<option value="filename">ACC_FILENAME</option> 
+					<option value="modified">ACC_MODIFIED</option>
+					<option value="random">ACC_RANDOM</option>
+				</field>
+				<field name="sortDir" type="list" default="asc" label="ACC_SORTDIR_LABEL" description="ACC_SORTDIR_DESCR">
+					<option value="asc">ACC_ASC</option> 
+					<option value="desc">ACC_DESC</option> 
+				</field>
+				<field name="subdir" type="list" default="0" label="ACC_SUBDIR_LABEL" description="ACC_SUBDIR_DESCR">
+		  			<option value="0">ACC_NO</option> 
+		  			<option value="1">ACC_YES</option> 
+		  		</field>
+				<field name="path" type="textarea" rows="10" cols="50" label="ACC_PATH_LABEL" description="ACC_PATH_DESCR" />
+				<field name="imglist_useThumbs" type="list" default="1" label="ACC_USETHUMBS_LABEL" description="ACC_USETHUMBS_DESCR">
+		  			<option value="0">ACC_NO</option> 
+		  			<option value="1">ACC_YES</option> 
+		  		</field>
+		  		<field name="imglist_disableOriginal" type="list" default="0" label="ACC_DISABLEORIGINAL_LABEL" description="ACC_DISABLEORIGINAL_DESCR">
+  					<option value="0">ACC_NO</option> 
+		  			<option value="1">ACC_YES</option> 
+		  		</field>
+				<field name="imglist_thumbWidth" type="text" size="6" default="150" label="ACC_THUMBWIDTH_LABEL" description="ACC_THUMBWIDTH_DESCR" />
+		  		<field name="imglist_thumbHeight" type="text" size="6" default="" label="ACC_THUMBHEIGHT_LABEL" description="ACC_THUMBHEIGHT_DESCR" />
+		  		<field name="imglist_thumbPath" type="text" size="50" default="" label="ACC_THUMBPATH_LABEL" description="ACC_THUMBPATH_DESCR" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6" type="module" method="upgrade">
+	<name>Show IP</name>
+	<author>Maik Heinelt</author>
+	<creationDate>January 2011</creationDate>
+	<copyright>Copyright (C) 2011 Maik Heinelt http://www.heinelt.info</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>maik@heinelt.info</authorEmail>
+	<authorUrl>www.heinelt.info</authorUrl>
+	<version>1.4</version>
+	<description>MOD_SHOWIP_DESC</description>
+	<files>
+		<filename module="mod_showip">mod_showip.php</filename>
+		<filename>browser.php</filename>
+		<filename>LICENSE.txt</filename>
+		<folder>images/os</folder>
+		<folder>images/browser</folder>
+		<folder>images/flags</folder>
+	</files>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_showip.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_showip.sys.ini</language>
+		<language tag="de-DE">de-DE/de-DE.mod_showip.ini</language>
+		<language tag="de-DE">de-DE/de-DE.mod_showip.sys.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.mod_showip.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.mod_showip.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				
+				<field name="ipLabel" type="text"
+					default="Your IP"
+					size="30"
+					description="MOD_SHOWIP_IPLABLE_DESC"
+					label="MOD_SHOWIP_IPLABLE_LBL"
+				/>
+				
+				
+				
+				<field name="@spacer" type="spacer"
+					description=""
+					label=""
+				/>
+				
+				<field name="showHostname" type="radio"
+					default="1"
+					description="MOD_SHOWIP_SHOW_HOSTNAME_DESC"
+					label="MOD_SHOWIP_SHOW_HOSTNAME_LBL"
+				>
+					<option value="1">Show</option>
+					<option value="0">Hide</option>
+				</field>
+				
+				<field name="hostnameLabel" type="text"
+					default="Hostname"
+					size="30"
+					description="MOD_SHOWIP_HOSTNAME_DESC"
+					label="MOD_SHOWIP_HOSTNAME_LBL"
+				/>
+				
+				<field name="@spacer2" type="spacer"
+					description=""
+					label=""
+				/>
+				
+				<field name="showBrowser" type="radio"
+					default="1"
+					description="MOD_SHOWIP_SHOWBRSWR_DESC"
+					label="MOD_SHOWIP_SHOWBRSWR_LBL"
+				>
+					<option value="1">Show</option>
+					<option value="0">Hide</option>
+				</field>
+				
+				<field name="showBrowserlogo" type="radio"
+					default="0"
+					description="MOD_SHOWIP_SHOWBRSWERLOGO_DESC"
+					label="MOD_SHOWIP_SHOWBRSWERLOGO_LBL"
+				>
+					<option value="1">Show</option>
+					<option value="0">Hide</option>
+				</field>
+				
+				<field name="browserLabel" type="text"
+					default="Your Browser"
+					size="50"
+					description="MOD_SHOWIP_SHOWBRSWRLBL_DESC"
+					label="MOD_SHOWIP_SHOWBRSWRLBL_LBL"
+				/>
+				
+				
+				<field name="@spacer3" type="spacer"
+					description=""
+					label=""
+				/>
+				
+				<field name="showOS" type="radio"
+					default="1"
+					description="MOD_SHOWIP_SHOWOS_DESC"
+					label="MOD_SHOWIP_SHOWOS_LBL"
+				>
+					<option value="1">Show</option>
+					<option value="0">Hide</option>
+				</field>
+				
+				<field name="showOSlogo" type="radio"
+					default="0"
+					description="MOD_SHOWIP_SHOWOSLOGO_DESC"
+					label="MOD_SHOWIP_SHOWOSLOGO_LBL"
+				>
+					<option value="1">Show</option>
+					<option value="0">Hide</option>
+				</field>
+				
+				<field name="osLabel" type="text"
+					default="Your OS"
+					size="30"
+					description="MOD_SHOWIP_OSLABEL_DESC"
+					label="MOD_SHOWIP_OSLABEL_LBL"
+				/>
+				
+				<field name="@spacer4" type="spacer"
+					description=""
+					label=""
+				/>
+				
+				<field name="showCountry" type="radio"
+					default="1"
+					description="MOD_SHOWIP_SHOWCNTRY_DESC"
+					label="MOD_SHOWIP_SHOWCNTRY_LBL"
+				>
+					<option value="1">Show</option>
+					<option value="0">Hide</option>
+				</field>
+				
+				<field name="showFlag" type="radio"
+					default="1"
+					description="MOD_SHOWIP_SHOWFLAG_DESC"
+					label="MOD_SHOWIP_SHOWFLAG_LBL"
+				>
+					<option value="1">Show</option>
+					<option value="0">Hide</option>
+				</field>
+				
+				<field name="locationLabel" type="text"
+					default="Location"
+					size="30"
+					description="MOD_SHOWIP_LOCLABEL_DESC"
+					label="MOD_SHOWIP_LOCLABEL_LBL"
+				/>
+				
+				<field name="@spacer5" type="spacer"
+					description=""
+					label=""
+				/>
+				
+				<field name="ShowRes" type="radio"
+					default="0"
+					description="MOD_SHOWIP_SHOWRES_DESC"
+					label="MOD_SHOWIP_SHOWRES_LBL"
+				>
+					<option value="1">Show</option>
+					<option value="0">Hide</option>
+				</field>
+				
+				<field name="ShorResLabel" type="text"
+					default="Screen Resolution"
+					size="30"
+					description="MOD_SHOWIP_SHOWRESABEL_DESC"
+					label="MOD_SHOWIP_SHOWRESABEL_LBL"
+				/>
+				
+				<field name="ShowJS" type="radio"
+					default="0"
+					description="MOD_SHOWIP_SHOWJS_DESC"
+					label="MOD_SHOWIP_SHOWJS_LBL"
+				>
+					<option value="1">Show</option>
+					<option value="0">Hide</option>
+				</field>				
+				
+				<field name="@spacer6" type="spacer"
+					description=""
+					label=""
+				/>
+				
+				<field name="moduleclass_sfx" type="text"
+					default=""
+					size="50"
+					description="PARAMMODULECLASSSUFFIX"
+					label="MOD_SHOWIP_MDLCLS_LBL"
+				/>
+			</fieldset>
+			
+			<fieldset name="GEOMAP_SETTINGS">
+				<field name="showMaplink" type="radio"
+					default="1"
+					description="MOD_SHOWIP_SHOW_MAPLINK_DESC"
+					label="MOD_SHOWIP_SHOW_MAPLINK_LBL"
+				>
+					<option value="1">Show</option>
+					<option value="0">Hide</option>
+				</field>
+				
+				<field name="Maplinktype" type="list"
+					default="1"
+					description="MOD_SHOWIP_MAPTYPE_DESC"
+					label="MOD_SHOWIP_MAPTYPE_LBL"
+				>
+					<option value="0">MOD_SHOWIP_GMAPS_LBL</option>
+					<option value="1">MOD_SHOWIP_OPENSTREETMAP_LBL</option>
+					<option value="2">MOD_SHOWIP_BING_LBL</option>
+					<option value="3">MOD_SHOWIP_YAHOOMAPS_LBL</option>
+				</field>
+				
+				<field name="MapZoomLevel" type="list"
+					default="1"
+					description="MOD_SHOWIP_MPZOOMLVL_DESC"
+					label="MOD_SHOWIP_MPZOOMLVL_LBL"
+				>
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+				</field>
+				
+				<field name="MapLinkLabel" type="text"
+					default="Show location on Map"
+					size="50"
+					description="MOD_SHOWIP_MAPLINKLABEL_DESC"
+					label="MOD_SHOWIP_MAPLINKLABEL_LBL"
+				/>	
+				
+				<field name="UnknownLocLBL" type="text"
+					default="Unknown Country"
+					size="30"
+					description="MOD_SHOWIP_UNKNOWNLOCLBL_DESC"
+					label="MOD_SHOWIP_UNKNOWNLOCLBL_LBL"
+				/>
+				
+			</fieldset>	
+			
+			
+		</fields>
+	</config>
+	<updateservers>
+		<server
+			type="extension"
+			priority="1"
+			name="Extensions from www.heinelt.info">http://heinelt.info/jupdates/j1.6/show_ip.xml	
+		</server>
+	</updateservers>
+</extension>

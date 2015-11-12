@@ -1,0 +1,65 @@
+.ari-cloud-carousel-loading {
+	background: transparent url(images/loading.gif) no-repeat center center;
+}
+
+.ari-cloud-carousel-loading .ari-cloud-carousel,
+.ari-cloud-carousel-loading .ari-cloud-carousel-caption,
+.ari-cloud-carousel-loading .ari-cloud-carousel-nav {
+	visibility: hidden;
+}
+
+.ari-cloud-carousel-wrapper {
+	position: relative;
+	margin: 0 auto;
+}
+
+.ari-cloud-carousel-wrapper .ari-cloud-carousel-caption {
+	position: absolute;
+	top: 5px;
+	left: 10px;
+	z-index: 99;
+}
+
+.ari-cloud-carousel-caption .ari-cloud-carousel-title,
+.ari-cloud-carousel-caption .ari-cloud-carousel-alt {
+	position: relative;
+}
+
+.ari-cloud-carousel-caption .ari-cloud-carousel-title {
+	font-weight: bold;
+}
+
+.ari-cloud-carousel-wrapper .ari-cloud-carousel-nav {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+}
+
+.ari-cloud-carousel-wrapper .ari-cloud-carousel-nav A.ari-cloud-carousel-left,
+.ari-cloud-carousel-wrapper .ari-cloud-carousel-nav A.ari-cloud-carousel-right {
+	position: relative;
+	text-indent: -9999px;
+	height: 40px;
+	width: 40px;
+	display: block !important;
+	float: left;
+}
+
+.ari-cloud-carousel-wrapper .ari-cloud-carousel-nav A.ari-cloud-carousel-left {
+	background: transparent url(images/rotate-left.png) no-repeat 0 0;
+}
+
+.ari-cloud-carousel-wrapper .ari-cloud-carousel-nav A.ari-cloud-carousel-left:hover,
+.ari-cloud-carousel-wrapper .ari-cloud-carousel-nav A.ari-cloud-carousel-right:hover {
+	background-position: 0 -39px;
+}
+
+.ari-cloud-carousel-wrapper .ari-cloud-carousel-nav A.ari-cloud-carousel-right {
+	background: transparent url(images/rotate-right.png) no-repeat 0 0;
+}
+
+.ari-cloud-carousel-header,
+.ari-cloud-carousel-footer
+{
+	text-align: center;
+}
